@@ -1,4 +1,4 @@
-package ru.filippovle.realestatebooking;
+package ru.filippovle.realestatebooking.specification;
 
 import jakarta.persistence.criteria.Root;
 import jakarta.persistence.criteria.Subquery;

@@ -4,7 +4,7 @@ package ru.filippovle.realestatebooking.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import ru.filippovle.realestatebooking.LotSpecifications;
+import ru.filippovle.realestatebooking.specification.LotSpecifications;
 import ru.filippovle.realestatebooking.model.dto.LotFilterDTO;
 import ru.filippovle.realestatebooking.model.entity.Lot;
 import ru.filippovle.realestatebooking.repository.LotRepository;
