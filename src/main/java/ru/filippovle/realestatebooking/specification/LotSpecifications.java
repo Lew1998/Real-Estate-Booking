@@ -1,4 +1,4 @@
-package ru.filippovle.realestatebooking;
+package ru.filippovle.realestatebooking.specification;
 
 import jakarta.persistence.criteria.Root;
 import jakarta.persistence.criteria.Subquery;
@@ -35,13 +35,14 @@ public class LotSpecifications {
         return (root, query, criteriaBuilder) -> {
             if (minArea == null && maxArea == null) {
                 return null;
-            } else if (minArea == null) {
-                return criteriaBuilder.lessThanOrEqualTo(root.get("area"), maxArea);
-            } else if (maxArea == null) {
-                return criteriaBuilder.greaterThanOrEqualTo(root.get("area"), minArea);
-            } else {
-                return criteriaBuilder.between(root.get("area"), minArea, maxArea);
             }
+            if (minArea == null) {
+                return criteriaBuilder.lessThanOrEqualTo(root.get("area"), maxArea);
+            }
+            if (maxArea == null) {
+                return criteriaBuilder.greaterThanOrEqualTo(root.get("area"), minArea);
+            }
+            return criteriaBuilder.between(root.get("area"), minArea, maxArea);
         };
     }
 
@@ -49,29 +50,33 @@ public class LotSpecifications {
         return (root, query, criteriaBuilder) -> {
             if (minFloor == null && maxFloor == null) {
                 return null;
-            } else if (minFloor == null) {
-                return criteriaBuilder.lessThanOrEqualTo(root.get("floor"), maxFloor);
-            } else if (maxFloor == null) {
-                return criteriaBuilder.greaterThanOrEqualTo(root.get("floor"), minFloor);
-            } else {
-                return criteriaBuilder.between(root.get("floor"), minFloor, maxFloor);
             }
+            if (minFloor == null) {
+                return criteriaBuilder.lessThanOrEqualTo(root.get("floor"), maxFloor);
+            }
+            if (maxFloor == null) {
+                return criteriaBuilder.greaterThanOrEqualTo(root.get("floor"), minFloor);
+            }
+            return criteriaBuilder.between(root.get("floor"), minFloor, maxFloor);
         };
     }
+
 
     public static Specification<Lot> roomsBetween(Integer minRooms, Integer maxRooms) {
         return (root, query, criteriaBuilder) -> {
             if (minRooms == null && maxRooms == null) {
                 return null;
-            } else if (minRooms == null) {
-                return criteriaBuilder.lessThanOrEqualTo(root.get("rooms"), maxRooms);
-            } else if (maxRooms == null) {
-                return criteriaBuilder.greaterThanOrEqualTo(root.get("rooms"), minRooms);
-            } else {
-                return criteriaBuilder.between(root.get("rooms"), minRooms, maxRooms);
             }
+            if (minRooms == null) {
+                return criteriaBuilder.lessThanOrEqualTo(root.get("rooms"), maxRooms);
+            }
+            if (maxRooms == null) {
+                return criteriaBuilder.greaterThanOrEqualTo(root.get("rooms"), minRooms);
+            }
+            return criteriaBuilder.between(root.get("rooms"), minRooms, maxRooms);
         };
     }
+
     public static Specification<Lot> isNotBooked() {
         return (root, query, criteriaBuilder) -> {
             query.distinct(true);
