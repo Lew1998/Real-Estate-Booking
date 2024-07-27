@@ -18,6 +18,7 @@ docker-compose up -d
 Для наглядной работы с PostgreSQL можно использовать pgAdmin, который также прописан в docker-compose.yml.
 
 ## Дефолтные креденшиалы для pgAdmin:
+url для входа: http://localhost/login
 Логин: admin@admin.com
 Пароль: admin
 

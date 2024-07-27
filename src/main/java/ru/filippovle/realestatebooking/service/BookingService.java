@@ -1,7 +1,7 @@
 package ru.filippovle.realestatebooking.service;
 
-import ru.filippovle.realestatebooking.model.entity.Booking;
+import ru.filippovle.realestatebooking.model.dto.BookingDTO;
 
 public interface BookingService {
-    Booking bookLot(String clientName, Long lotId, String contactPhone);
+    BookingDTO bookLot(BookingDTO dto);
 }
