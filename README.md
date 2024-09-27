@@ -31,6 +31,13 @@ Port: 5432 (по умолчанию).
 Username: potest (как указано в docker-compose.yml).
 Password: potest (как указано в docker-compose.yml).
 
+## Просмотр метрик приложения в Grafana
+url для входа http://localhost:3000/
+дефолтные креды из файла docker-compose:
+Username: admin
+Password: admin
+Добавьте нужные Dashboard-ы по вкусу
+
 ## API и документация
 UI для просмотра API, технической документации и тестирования приложения доступен в браузере по адресу:
 http://localhost:8080/swagger-ui/index.html
