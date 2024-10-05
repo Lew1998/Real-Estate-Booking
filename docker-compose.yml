@@ -1,6 +1,17 @@
 version: '3.8'
 
 services:
+  app:
+    build: .
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/realestatebooking
+      DB_USERNAME: potest
+      DB_PASSWORD: potest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:16.3
     container_name: realestatebooking-postgres

@@ -41,3 +41,5 @@ Password: admin
 ## API и документация
 UI для просмотра API, технической документации и тестирования приложения доступен в браузере по адресу:
 http://localhost:8080/swagger-ui/index.html
+
+Environment variables для локальной сборки: DB_PASSWORD=potest;DB_URL=jdbc:postgresql://postgres:5432/realestatebooking;DB_USERNAME=potest;SPRING_PROFILES_ACTIVE=local 
